@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <title>formulario</title>
+    <meta name="author" content="Quique Orellana">
+    <link rel="stylesheet" href="../css/PlantillaEstilo107.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="../js/funciones.js"></script>
+    <script src="../js/funcionesForm.js"></script>
+    <script src="../js/funcionesModalCuadro.js"></script>
+
+</head>
+<body onload = "generacionPUKDoble();">
+<body>
+<main>
+<section class="flex-container flex-justifycenter">
+	<div class="flex-container flex-justifycenter colorgrey" style="flex-basis:50%">
+		<div class="relative" style="flex-basis:50%">
+			<div>
+				<a href="index.html"><img src="../img/iconos/img_avatar.png" alt="banner-1" style="width:100%"></a>
+			</div>
+			<div style="position: absolute; top:5%; right:10%; text-align: center; z-index: 2">
+				<a href="javascript=void(0)" style="text-decoration: none"><i class="fas fa-times" style="font-size:30px; color:black"></i></a>
+			</div>
+		</div>
+
+<!-- USUARIO Y CONTRASEÑA -->
+		<div style="flex-basis:90%; border: 1px solid darkgrey">
+			<form id="form01" name="form01" action="../html/confirmacion.html" method="get" target="_blank">
+			<div>
+		<!--enctype="multipart/form-data" sólo en méthod post-->
+				<label for="usuario">Usuario <sup>*</sup></label><br>
+				<input type="text" id="usuario" name="usuario" placeholder=" Entrar usuario o email" autocomplete="on" onblur="comprobarCampoUser();" value="pedro" required><br>
+				<label for="usuario" id="mensajesUser"></label><br>
+		<!-- autofocus--> 
+				<label for="contrasenna">Contraseña <sup>*</sup></label><br>
+				<input type="password" id="contrasenna" name="contrasenna" placeholder=" Entrar contraseña" pattern="[0-9A-Za-z]{8}" maxlength="8" value="4321ABCD" required onblur="comprobarCampoPass();"><br>
+				<label for="contrasenna" id="mensajesPass"></label><br>
+
+						<input type="checkbox" id="checkboxPass" name="checkboxPass" onclick="mostrarPassword();"> 
+						<label for="checkboxPass" id="etiquetaCheckboxPass">Mostrar Contraseña</label><br>
+						<br>
+				<div class="flex-container flex-justifyspacebetween">
+					<div style="flex-basis:40%">
+							<input type="submit" id="enviar" value="Enviar" onclick="validacion();" style="width: 100%"><br>
+						<br>
+					</div>
+					<div style="flex-basis:50%">
+						<input type="checkbox" name="recordarme">
+						<label for="recordarme"> Recordarme</label><br>
+						<br>
+					</div>
+				</div>
+			</div>
+				<hr>
+
+			<div>
+				<div class="flex-container flex-nowrap flex-justifyspacebetween">
+					<div style="flex-basis:40%;">
+						<input type="button" value="Registrarse" id="myBtn" onclick="alert('Has pulsado registrarse')">
+					</div>
+					<div style="flex-basis:50%;">
+						<label for="olvidado"></label>
+						<input type="checkbox" name="olvidado">¿Has olvidado la <a href="javascript=void(0)" onclick="confirm('Te enviaremos un correo para que renueves tu contraseña')">contraseña?</a><br>
+						<br>
+					</div>
+				</div>
+			</div>
+			<br>
+			</form>
+		</div>
+
+<!-- CAJA MODAL CONFIRMACION ENVIO FORMULARIO -->
+		<div id="modalCuadro" class="modal" onclick="cerrarModal();">
+			  <div class="modal-content" style="width: 70%; animation-duration: 0.4s">
+				<div class="modal-header flex-container flex-justifyspacebetween">
+				  <h2>Modal Header</h2>
+				  <span class="close" onclick="cerrarModal();">&times;</span>
+				</div>
+				<div class="modal-body flex-container flex-justifyspacebetween">
+				  <p id="parrafo">
+				  Sus datos se han enviado correctamente.<br>
+				  Pronto nos pondremos en contacto con usted.
+				  </p>
+				</div>
+				<div class="modal-footer flex-container flex-justifyspacebetween">
+				  <h4>Modal Footer</h4>
+				</div>
+			  </div>
+		</div>
+
+	</div>
+</section>
+	
+<section class="flex-container flex-justifycenter">
+<div class="flex-container flex-justifycenter colorgrey" style="flex-basis:50%">
+		
+<!-- DATOS DE SUSCRIPCION -->
+	<div id="modalSuscripcion" class="modal2" onclick="cerrarModal();">
+	  	<div class="modal-content" style="width: 100%; animation-duration: 0.4s">
+		<form id="form02" name="form02" action="../html/confirmacion.html" method="get" target="_blank">
+			<div class="modal-header flex-container flex-justifyspacebetween">
+			  <h2>Datos de suscripción</h2>
+			  <span class="close" onclick="cerrarModal();">&times;</span>
+			</div>
+
+			<div class="modal-body flex-container flex-justifyspacebetween colorgrey" style="flex-basis:80%;">
+				<div>
+					<tr>
+					  <td>Extrae los caracteres del nombre completo marcando previamente los espacios</td>
+					  <td>substring(start, end)</td>
+					  <td><button class="btn btn-primary btn-sm" type="button" onClick="subcadena()" style="width: 40%">Ejecutar</button></td>
+					</tr><br>
+				</div>
+
+				<div style="flex-basis:100%; border: 1px solid darkgrey; text-align: left;">
+					<label for="nombreUsuario">Nombre <sup>*</sup></label><br>
+					<input type="text" id="nombreUsuario" name="nombreUsuario" placeholder=" Nombre" required value="Enrique"><br>
+					<br>
+
+					<label for="apellido1">Primer Apellido <sup>*</sup></label><br>
+					<input type="text" id="apellido1" name="apellido1" placeholder=" Primer Apellido" required value="Orellana"><br>
+					<br>
+
+					<label for="apellido2">Segundo Apellido <sup>*</sup></label><br>
+					<input type="text" id="apellido2" name="apellido2" placeholder=" Segundo Apellido" required value="Bofarull"><br>
+					<br>
+
+					<label for="DNI">DNI <sup>*</sup></label><br>
+					<input type="text" id="dni" name="dni" pattern="[0-9]{8}[A-Z]{1}" placeholder=" Entrar DNI" required value="01234567c" style="text-transform: uppercase">
+					<br>
+					<br>
+
+					<label for="telefono">Teléfono <sup>*</sup></label><br>
+					<input type="tel" id="telefono" name="telefono" pattern="[6-9]{1}[0-9]{8}" placeholder="999999999" required tabindex="3" value="666999999"><br>
+					<br>
+
+					<label for="nombre">Correo Electrónico <sup>*</sup></label><br>
+					<input type="email" id="email" name="email" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" placeholder="Tu correo electrónico" required value="prueba@hotmail.com"><br>
+					<br>
+					<hr>
+
+					<label for="mascotaPregunta">¿Qué quieres que te preguntemos para recuperar tu contraseña? <sup>*</sup></label><br>
+					<div class="flex-container flex-justifyspacebetween">
+						<select id="mascotaPregunta" size="4" placeholder="Pregunta para recuperar contraseña olvidada" required style="flex-basis:100%; width: 100%">
+							<option value="MASCOTA"> ¿Cual es el nombre de tu mascota preferida?</option>
+							<option value="PADRE"> ¿Cual es el nombre de tu padre?</option>
+							<option value="MADRE"> ¿Cual es el apellido de tu madre?</option>
+							<option value="AMIGO"> ¿Como se llama tu mejor amigo?</option>
+						</select>
+						<div style="flex-basis:40%;">
+							<input type="button" name="mascotaPregunta" value="Validar" onclick="seleccionSencilla();" style="width: 100%">
+						</div>
+					</div>
+					<br>
+
+					<label for="mascotaRespuesta">Y... ¿Cuál es la respuesta? <sup>*</sup></label><br>
+					<input type="text" id="mascotaRespuesta" name="mascotaRespuesta" placeholder="Respuesta para recuperar contraseña olvidada" required><br>
+					<br>
+					<hr>
+
+					<label for="recuperacionPuk">Código recuperación </label><br>
+					<input type="text" id="recuperacionPuk" name="recuperacionPuk" pattern="[0-9]{5}" placeholder="9999999999" value="9999999999" disabled><br>
+<!-- Borrar cuando funcione onload -->
+					<div class="flex-container flex-nowrap flex-justifyspacebetween">
+						<div style="flex-basis:40%;">
+							<input type="button" value="Borrar al terminar" onclick="generacionPUKDoble()">
+						</div>
+					</div>
+
+					<br>
+				</div>
+			</div>
+
+			<div class="modal-body flex-container flex-justifyspacebetween colorgrey" style="flex-basis:80%;">
+				<div style="text-align: left; border: 1px solid darkgrey;">
+	<!-- --------------------------------------------------------- */
+	// SELECT SENCILLO
+	/*  --------------------------------------------------------- -->
+					<label for="pais">País</label><br>
+					<div class="flex-container flex-justifyspacebetween">
+						<select id="pais" size="2" style="flex-basis:40%; width: 100%">
+							<option value="ESPAÑA"> España</option>
+							<option value="PORTUGAL"> Portugal</option>
+							<option value="FRANCIA"> Francia</option>
+							<option value="GRAN BRETAÑA"> Gran Bretaña</option>
+						</select>
+						<div style="flex-basis:40%;">
+							<input type="button" name="pais" value="Validar" onclick="seleccionSencilla();" style="width: 100%">
+						</div>
+					</div>
+					<br>
+					<hr>
+
+	<!-- --------------------------------------------------------- */
+	// SELECT COMBINADO
+	/*  --------------------------------------------------------- -->
+					<label for="coche">Coche</label><br>
+					<div class="flex-container flex-justifyspacebetween">
+						<select id="coche" size="1" onchange="ofreceLista()" style="flex-basis:30%; width: 100%">
+							<option value="">-- Coche --</option>
+							<option value="VOLVO">Volvo</option>
+							<option value="VOLKSWAGEN">Volkswagen</option>
+							<option value="BMW">BMW</option>
+						</select>
+						<select id="cocheModelo" size="1" style="flex-basis:30%; width: 100%"></select>
+						<div style="flex-basis:30%;">
+						</div>
+					</div>
+					<br>
+					<hr>
+
+	<!-- --------------------------------------------------------- */
+	// CHECKBOX MULTIPLE
+	/*  --------------------------------------------------------- -->
+					<label for="alimentación">Alimentacion</label><br>
+					<div class="flex-container flex-justifyspacebetween">
+						<div style="flex-basis:40%; width: 100%; text-align: left;">
+							<ul>
+								<li><input type="checkbox" name="alimentación" value="VEGANO"> Vegano</li>
+								<li><input type="checkbox" name="alimentación" value="SIN SAL"> Sin sal</li>
+								<li><input type="checkbox" name="alimentación" value="VEGETARIANO"> Vegetariano</li>
+								<li><input type="checkbox" name="alimentación" value="SIN GLUTEN"> Sin gluten</li>
+							</ul>
+						</div>
+						<div style="flex-basis:55%;">
+							<input type="button" onclick="seleccionMultiple()" value="Resumir" style="width: 80%"><br>
+							<input type="text" id="resumenSeleccion" size="50"><br>
+							<br>
+							<input type="submit" value="Validar" style="width: 80%">
+						</div>
+					</div>
+					<br>
+					<hr>
+	<!-- --------------------------------------------------------- */
+	// RADIO EXCLUYENTE
+	/*  --------------------------------------------------------- -->
+					<label for="sexo">Sexo</label><br>
+					<div class="flex-container flex-justifyspacebetween">
+						<div style="flex-basis:40%; width: 100%; text-align: left;">
+							<ul id="sexo" style="flex-basis:40%; width: 100%">
+								<li><input type="radio" name="sexo" value="HOMBRE"> Hombre</li>
+								<li><input type="radio" name="sexo" value="MUJER"> Mujer</li>
+								<li><input type="radio" name="sexo" value="OTRO"> Otro</li>
+							</ul>
+						</div>
+						<div style="flex-basis:55%;">
+							<input type="button" onclick="radioExcluyente()" value="Resumir" style="width: 80%"><br>
+							<input type="text" id="resumenRadio" size="50"><br>
+							<br>
+							<input type="submit" value="Validar" style="width: 80%">
+						</div>
+					</div>
+					<br>
+				</div>
+
+			</div>
+			<div class="modal-footer flex-container flex-alignitemcenter">
+				<br>
+					<input type="submit" id="enviar" value="Enviar" onclick="validacion();" style="width: 40%"><br>
+				<br>
+			</div>
+		</form>
+	  	</div>
+	</div>
+</div>
+</section>
+<br>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <title>formulario</title>
+    <meta name="author" content="Quique Orellana">
+    <link rel="stylesheet" href="../css/PlantillaEstilo107.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="../js/funciones.js"></script>
+    <script src="../js/funcionesForm.js"></script>
+    <script src="../js/funcionesModalCuadro.js"></script>
+
+</head>
+<body onload = "generacionPUKDoble();">
+<body>
+<main>
+<section class="flex-container flex-justifycenter">
+<div class="flex-container flex-justifycenter colorgrey" style="flex-basis:50%">
+		
+<!-- DATOS DE SUSCRIPCION -->
+	<div id="modalSuscripcion" class="modal2" onclick="cerrarModal();">
+	  	<div class="modal-content" style="width: 100%; animation-duration: 0.4s">
+		<form id="form02" name="form02" action="../html/confirmacion.html" method="get" target="_blank">
+			<div class="modal-body flex-container flex-justifyspacebetween colorgrey" style="flex-basis:80%;">
+
+	<!-- --------------------------------------------------------- */
+	// CHECKBOX MULTIPLE
+	/*  --------------------------------------------------------- -->
+					<label for="productos">Productos</label><br>
+					<div class="flex-container flex-justifyspacebetween">
+						<div style="flex-basis:100%; width: 100%; text-align: left;">
+							<ul>
+								<li><strong>Cocina al aire libre</strong></li>
+								<li><input type="checkbox" name="productos" value="Barbacoas">Barbacoas</li>
+								<li><input type="checkbox" name="productos" value="Hornos de leña">Hornos de leña</li>
+								</ul>
+								<hr>
+								<ul>
+								<li><strong>Cocina y transformación alimentos</strong></li>
+								<li><input type="checkbox" name="productos" value="Amasadoras de espiral">Amasadoras de espiral</li>
+								<li><input type="checkbox" name="productos" value="Cortadoras de fiambre">Cortadoras de fiambre</li>
+								<li><input type="checkbox" name="productos" value="Embutidoras">Embutidoras</li>
+								<li><input type="checkbox" name="productos" value="Envasadoras al vacío">Envasadoras al vacío</li>
+								<li><input type="checkbox" name="productos" value="Máquinas de hacer pasta">Máquinas de hacer pasta</li>
+								<li><input type="checkbox" name="productos" value="Molinos de harina">Molinos de harina</li>
+								<li><input type="checkbox" name="productos" value="Molinos eléctricos de cereales">Molinos eléctricos de cereales</li>
+								<li><input type="checkbox" name="productos" value="Picadoras de carne">Picadoras de carne</li>
+								<li><input type="checkbox" name="productos" value="Ralladores eléctricos">Ralladores eléctricos</li>
+								<li><input type="checkbox" name="productos" value="Sierra de huesos">Sierra de huesos</li>
+								<li><input type="checkbox" name="productos" value="Trituradoras de tomate">Trituradoras de tomate</li>
+								</ul>
+								<hr>
+								<ul>
+								<li><strong>Corte y mantenimiento de zonas verdes</strong></li>
+								<li><input type="checkbox" name="productos" value="Cortacéspedes">Cortacéspedes</li>
+								<li><input type="checkbox" name="productos" value="Desbrozadoras">Desbrozadoras</li>
+								<li><input type="checkbox" name="productos" value="Desbrozadoras de ruedas">Desbrozadoras de ruedas</li>
+								<li><input type="checkbox" name="productos" value="Desbrozadoras de ruedas de cuchillas o martillos">Desbrozadoras de ruedas de cuchillas o martillos</li>
+								<li><input type="checkbox" name="productos" value="Escarificadores">Escarificadores</li>
+								<li><input type="checkbox" name="productos" value="Motosegadoras">Motosegadoras</li>
+								<li><input type="checkbox" name="productos" value="Robots Cortacésped">Robots Cortacésped</li>
+								<li><input type="checkbox" name="productos" value="Tractores cortacésped">Tractores cortacésped</li>
+								<li><input type="checkbox" name="productos" value="Cortacéspedes para tractor">Cortacéspedes para tractor</li>
+								<li><input type="checkbox" name="productos" value="Desbrozadoras agrícolas para tractor">Desbrozadoras agrícolas para tractor</li>
+								<li><input type="checkbox" name="productos" value="Trituradoras agrícolas reversibles">Trituradoras agrícolas reversibles</li>
+								<li><input type="checkbox" name="productos" value="Trituradoras laterales para tractor con brazo">Trituradoras laterales para tractor con brazo</li>
+								<li><input type="checkbox" name="productos" value="Trituradoras para tractor">Trituradoras para tractor</li>
+								</ul>
+								<hr>
+								<ul>
+								<li><strong>Corte y trabajo de la madera</strong></li>
+								<li><input type="checkbox" name="productos" value="Astilladoras de leña">Astilladoras de leña</li>
+								<li><input type="checkbox" name="productos" value="Biotrituradoras">Biotrituradoras</li>
+								<li><input type="checkbox" name="productos" value="Electrosierras">Electrosierras</li>
+								<li><input type="checkbox" name="productos" value="Motosierras">Motosierras</li>
+								<li><input type="checkbox" name="productos" value="Peletizadoras">Peletizadoras</li>
+								<li><input type="checkbox" name="productos" value="Sierras circulares de mesa">Sierras circulares de mesa</li>
+								<li><input type="checkbox" name="productos" value="Sierras de cinta">Sierras de cinta</li>
+								</ul>
+								<hr>
+								<ul>
+								<li><strong>Cosecha de aceitunas</strong></li>
+								<li><input type="checkbox" name="productos" value="Mantos para la cosecha de aceitunas">Mantos para la cosecha de aceitunas</li>
+								<li><input type="checkbox" name="productos" value="Motocompresores de gasolina">Motocompresores de gasolina</li>
+								<li><input type="checkbox" name="productos" value="Vareadores de aceitunas con motor de gasolina">Vareadores de aceitunas con motor de gasolina</li>
+								<li><input type="checkbox" name="productos" value="Vareadores de aceitunas eléctricos">Vareadores de aceitunas eléctricos</li>
+								<li><input type="checkbox" name="productos" value="Vareadores neumáticos">Vareadores neumáticos</li>
+								<li><input type="checkbox" name="productos" value="Vibradores de aceitunas con motor de gasolina">Vibradores de aceitunas con motor de gasolina</li>
+								</ul>
+								<hr>
+								<ul>
+								<li><strong>Cuidado y limpieza de áreas exteriores</strong></li>
+								<li><input type="checkbox" name="productos" value="Quitanieves">Quitanieves</li>
+								<li><input type="checkbox" name="productos" value="Soplador de hojas sobre ruedas">Soplador de hojas sobre ruedas</li>
+								<li><input type="checkbox" name="productos" value="Sopladores-Aspiradores de hojas">Sopladores-Aspiradores de hojas</li>
+								</ul>
+								<hr>
+								<ul>
+								<li><strong>Enología, filtración y trasiego</strong></li>
+								<li><input type="checkbox" name="productos" value="Filtros para vino y aceite">Filtros para vino y aceite</li>
+								<li><input type="checkbox" name="productos" value="Llenadoras de botellas">Llenadoras de botellas</li>
+								<li><input type="checkbox" name="productos" value="Prensas de vino">Prensas de vino</li>
+								</ul>
+								<hr>
+								<ul>
+								<li><strong>Labor y cuidado del terreno</strong></li>
+								<li><input type="checkbox" name="productos" value="Motocultores">Motocultores</li>
+								<li><input type="checkbox" name="productos" value="Sembradoras y abonadoras">Sembradoras y abonadoras</li>
+								<li><input type="checkbox" name="productos" value="Arado de vertedera para tractor">Arado de vertedera para tractor</li>
+								<li><input type="checkbox" name="productos" value="Cajones y palas para tractores">Cajones y palas para tractores</li>
+								<li><input type="checkbox" name="productos" value="Cultivador de muelles - Extirpador">Cultivador de muelles - Extirpador</li>
+								<li><input type="checkbox" name="productos" value="Gradas rotativas">Gradas rotativas</li>
+								<li><input type="checkbox" name="productos" value="Niveladoras para tractor">Niveladoras para tractor</li>
+								<li><input type="checkbox" name="productos" value="Rastras de dientes">Rastras de dientes</li>
+								<li><input type="checkbox" name="productos" value="Rodillos para tractor">Rodillos para tractor</li>
+								<li><input type="checkbox" name="productos" value="Rotocultivadores">Rotocultivadores</li>
+								<li><input type="checkbox" name="productos" value="Subsoladores agrícolas">Subsoladores agrícolas</li>
+								</ul>
+								<hr>
+								<ul>
+								<li><strong>Lavado y máquinas para limpieza</strong></li>
+								<li><input type="checkbox" name="productos" value="Aspiradores multifuncionales">Aspiradores multifuncionales</li>
+								<li><input type="checkbox" name="productos" value="Fregadoras">Fregadoras</li>
+								<li><input type="checkbox" name="productos" value="Hidrolimpiadoras con motor de gasolina">Hidrolimpiadoras con motor de gasolina</li>
+								<li><input type="checkbox" name="productos" value="Hidrolimpiadoras de agua caliente">Hidrolimpiadoras de agua caliente</li>
+								<li><input type="checkbox" name="productos" value="Hidrolimpiadoras de agua fría">Hidrolimpiadoras de agua fría</li>
+								<li><input type="checkbox" name="productos" value="Limpiadores a vapor">Limpiadores a vapor</li>
+								</ul>
+								<hr>
+								<ul>
+								<li><strong>Poda</strong></li>
+								<li><input type="checkbox" name="productos" value="Podadoras de altura">Podadoras de altura</li>
+								<li><input type="checkbox" name="productos" value="Serruchos telescópicos">Serruchos telescópicos</li>
+								<li><input type="checkbox" name="productos" value="Tijeras cortasetos y Podaderas manuales">Tijeras cortasetos y Podaderas manuales</li>
+								<li><input type="checkbox" name="productos" value="Tijeras de poda eléctricas">Tijeras de poda eléctricas</li>
+								<li><input type="checkbox" name="productos" value="Tijeras de podar neumáticas">Tijeras de podar neumáticas</li>
+								</ul>
+								<hr>
+								<ul>
+								<li><strong>Riego</strong></li>
+								<li><input type="checkbox" name="productos" value="Bombas sumergibles eléctricas">Bombas sumergibles eléctricas</li>
+								<li><input type="checkbox" name="productos" value="Motobombas de riego">Motobombas de riego</li>
+								</ul>
+								<hr>
+								<ul>
+								<li><strong>text</strong></li>
+								<li><input type="checkbox" name="productos" value="Trituradoras de hierba para tractor con recogedor">Trituradoras de hierba para tractor con recogedor</li>
+								<li><input type="checkbox" name="productos" value="Trituradoras de hierba y leña medias despl. mecánico">Trituradoras de hierba y leña medias despl. mecánico</li>
+								<li><input type="checkbox" name="productos" value="Trituradoras de hierba y sarmientos serie ligera - fija">Trituradoras de hierba y sarmientos serie ligera - fija</li>
+								<li><input type="checkbox" name="productos" value="Trituradoras de martillos serie media - hidráulica">Trituradoras de martillos serie media - hidráulica</li>
+								<li><input type="checkbox" name="productos" value="Trituradoras de poda y hierba serie media - fija">Trituradoras de poda y hierba serie media - fija</li>
+								<li><input type="checkbox" name="productos" value="Trituradoras de restos de poda serie pesada \u2013 fija">Trituradoras de restos de poda serie pesada \u2013 fija</li>
+								<li><input type="checkbox" name="productos" value="Trituradoras de sarmientos serie pesada - hidráulica">Trituradoras de sarmientos serie pesada - hidráulica</li>
+								<li><input type="checkbox" name="productos" value="Trituradoras pesadas con desplazamiento manual">Trituradoras pesadas con desplazamiento manual</li>
+								</ul>
+								<hr>
+								<ul>
+								<li><strong>Transporte, construcción, talleres, bricolaje</strong></li>
+								<li><input type="checkbox" name="productos" value="Compresores de aire eléctricos">Compresores de aire eléctricos</li>
+								<li><input type="checkbox" name="productos" value="Corte al plasma">Corte al plasma</li>
+								<li><input type="checkbox" name="productos" value="Generadores de aire caliente">Generadores de aire caliente</li>
+								<li><input type="checkbox" name="productos" value="Generadores eléctricos">Generadores eléctricos</li>
+								<li><input type="checkbox" name="productos" value="Soldadoras">Soldadoras</li>
+								<li><input type="checkbox" name="productos" value="Transpaleta">Transpaleta</li>
+								</ul>
+								<hr>
+								<ul>
+								<li><strong>Tratamientos fitosanitarios y herbicidas</strong></li>
+								<li><input type="checkbox" name="productos" value="Atomizadores de mochila con motor de mezcla">Atomizadores de mochila con motor de mezcla</li>
+								<li><input type="checkbox" name="productos" value="Bombas de fumigación con carro">Bombas de fumigación con carro</li>
+								<li><input type="checkbox" name="productos" value="Bombas de fumigación de mochila">Bombas de fumigación de mochila</li>
+								<li><input type="checkbox" name="productos" value="Bombas y motobombas de fumigación">Bombas y motobombas de fumigación</li>
+								<li><input type="checkbox" name="productos" value="Carretillas fumigadoras con depósito">Carretillas fumigadoras con depósito</li>
+								<li><input type="checkbox" name="productos" value="Carretillas fumigadoras con enrollador">Carretillas fumigadoras con enrollador</li>
+								<li><input type="checkbox" name="productos" value="Carretillas fumigadoras para tractores cortacésped">Carretillas fumigadoras para tractores cortacésped</li>
+								<li><input type="checkbox" name="productos" value="Pulverizadores suspendidos">Pulverizadores suspendidos</li>
+								<li><input type="checkbox" name="productos" value="Pulverizadores tipo bancada con bombas">Pulverizadores tipo bancada con bombas</li>
+								<li><input type="checkbox" name="productos" value="Sulfatadoras">Sulfatadoras</li>
+								<li><input type="checkbox" name="productos" value="Sulfatadoras para tractor">Sulfatadoras para tractor</li>
+							</ul>
+						</div>
+						<div style="flex-basis:55%;">
+							<input type="button" onclick="seleccionMultiple()" value="Resumir" style="width: 80%"><br>
+							<input type="text" id="resumenSeleccion" size="50"><br>
+							<br>
+							<input type="submit" value="Validar" style="width: 80%">
+						</div>
+					</div>
+					<br>
+					<hr>
+			</div>
+			<div class="modal-footer flex-container flex-alignitemcenter">
+				<br>
+					<input type="submit" id="enviar" value="Enviar" onclick="validacion();" style="width: 40%"><br>
+				<br>
+			</div>
+		</form>
+	  	</div>
+	</div>
+</div>
+</section>
+<br>
+
+</main>
+</body>
+</html>

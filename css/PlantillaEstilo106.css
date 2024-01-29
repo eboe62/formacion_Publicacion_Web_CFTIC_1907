@@ -1,0 +1,1052 @@
+/*General*/
+* {
+    box-sizing: border-box;
+    position: -webkit-sticky;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: "Century Gothic","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-size: 16px;
+    padding: 0px;
+    margin: 0px;
+    text-overflow: ellipsis;
+    color: gray;
+}
+
+@font-face {
+    font-family:'SamsungOne' arial;
+    /*src:url(fonts/SamsungOne-400.eot);*/
+    src:url(fonts/SamsungOne-400.ttf);
+}
+body {
+    border: 1px solid darkgrey;
+    background-color: #fafafa;
+    padding: 1px;
+    margin: 2px auto;
+    max-width: 1188px;
+}
+
+header {
+ /*   /*overflow: hidden;*/
+    background-color: #fafafa;
+    color: white;
+    border: 1px solid darkgrey;
+    padding: 4px; 
+    margin: 2px auto;
+    width: 99%;
+    /*overflow: hidden;*/
+/*    position: sticky;*/
+    top: 0;
+}
+header > div {
+    border: 1px solid #fafafa;
+    padding: 1px;
+    margin: 2px auto;
+    flex-basis: 50%;
+} 
+
+nav {   
+    border: 1px solid darkgrey;
+    padding: 1px; 
+    margin: 2px;
+    width: 99%;
+    /*overflow: hidden;*/
+    background-color: #fafafa;
+/*    position: sticky;*/
+    top: 0;
+}
+nav div {
+    border: 1px solid darkgrey;
+    padding: 1px; 
+    margin: 1px auto;
+    /*width: 99%; */
+    /*overflow: hidden;*/
+}
+nav ul {
+/*  padding: 1px; 
+    margin: 2px auto;
+    width: 100%;
+    display: inline-flex;
+    overflow: hidden;*/
+    list-style-type: none;
+}
+nav li {
+/*    float:left;*/
+    display: inline-block;
+}
+nav li a {
+    border: 1px solid darkgrey;
+    padding: 5px; 
+    margin: 1px auto;
+    width: auto;
+    opacity:1;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
+nav li a:hover {
+    opacity:0.90;
+    color: black;
+    border-bottom: 3px solid black;
+    transition: 0.5s;
+}
+nav img {
+    max-width: 100px;
+    width: 85%;
+    vertical-align: middle;
+}
+nav li img {
+    max-width: 100px;
+    width: 50%;
+    vertical-align: middle;
+}
+
+.relative {
+    position: relative;
+    z-index: 1;
+}
+
+/*Menu desplegable hacia abajo*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropbtn {
+    background-color: #fafafa;
+    padding: 5px;
+    cursor: pointer;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 23px;
+    text-align: left;
+    background-color: #fafafa;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 200px;
+    z-index: 2;
+}
+.dropdown-content a {
+    border: 1px solid darkgrey;
+    color: gray;
+    padding: 6px 12px;
+    text-align: left;
+    width: auto;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    opacity:1;
+    color: black;
+    border-bottom: 3px solid black;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*Menu desplegable hacia el lado*/
+.sidebar {
+    position: relative;
+}
+.sidebtn {
+    background-color: #fafafa;
+    padding: 5px;
+    cursor: pointer;
+}
+.sidebar-content {
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 100px;
+    text-align: left;
+    background-color: #fafafa;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 200px;
+    z-index: 2;
+}
+.sidebar ul {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 200px;
+    text-align: left;
+    background-color: #fafafa;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 100px;
+    z-index: 2;
+}
+.sidebar-content li {
+    border: 1px solid darkgrey;
+    color: gray;
+    padding: 6px 12px;
+    text-align: left;
+    width: auto;
+    text-decoration: none;
+    display: block;
+}
+.sidebar-content ul li:hover {
+    display: inline-block;
+    opacity:1;
+}
+.sidebar:hover .sidebar-content {
+    display: block;
+}
+
+/*eliminar
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fafafa;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+*/
+
+.mySlides {
+    display: none;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: grey;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    border: 1px solid black;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #fafafa;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active {
+    background-color: #fafafa;
+}
+.active, .dot:hover {
+    background-color: darkgrey;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: darkgrey;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    text-decoration: none;
+}
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background-color: #fafafa;
+}
+
+.click1 ul li {
+    border: 1px solid darkgrey;
+    font-size: 12px;
+    color: gray;
+    list-style-type:none;
+    text-decoration: none;
+}
+.click1 ul li a {
+    font-weight: 800;
+    color: gray;
+    opacity:0.65;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+    text-decoration: none;
+}
+.click1 ul li a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+.click2 ul li {
+    border: 1px solid darkgrey;
+    font-size: 12px;
+    color: gray;
+    list-style-type:none;
+    text-decoration: none;
+}
+.click2 ul li a {
+    font-weight: 800;
+    color: gray;
+    opacity:0.65;
+    margin: 2px;
+    padding: 0px 5px;
+    width: auto;
+    text-decoration: none;
+}
+.click2 ul li a:hover {
+    transition: 0.5s;
+    opacity: 1;
+    border-bottom: 3px solid darkgrey;
+}
+.click3 {
+    border: 1px solid black;
+    align-content: center; 
+    border-radius: 15px; 
+    height:25px; 
+    width: 150px;
+    flex-wrap: nowrap;
+    display: inline-block;
+    z-index: 2;
+}
+.click3 a {
+    border: 1px solid black;
+    opacity:0.65;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 3px;
+    background-color: darkgrey;
+    border-radius: 50%;
+    transition: background-color 0.6s ease;
+}
+.click3 button {
+    border: 1px solid black;
+    opacity:0.65;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    padding: 7px;
+    margin: 2px;
+    background-color: darkgrey;
+    border-radius: 50%;
+    transition: background-color 0.6s ease;
+}
+.click3 ul li {
+    border: 1px solid darkgrey;
+    font-size: 12px;
+    color: gray;
+    list-style-type:none;
+    text-decoration: none;
+}
+.click3 ul li a {
+    font-weight: 800;
+    color: gray;
+    opacity:0.65;
+    margin: 2px;
+    padding: 0px 5px;
+    width: auto;
+    text-decoration: none;
+}
+.click3 ul li a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+.click4 {
+    width: 25px;
+    height: auto;
+}
+.click5 ul p {
+    float: right;
+}
+.click5 ul li a span {
+    border: none;
+    font-size: 100%;
+}
+.click5 ul li span:hover {
+    color: green;
+}
+.click5 i:hover {
+    color: green;
+}
+.click5 a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+main {
+    border: 1px solid darkgrey;
+    padding: 1px;
+    margin: 2px;
+    width: 99%;
+    max-width:1188px;
+    background-color: #fafafa;
+    /*overflow: hidden;*/
+}
+main img {
+    width: 97%;
+    height: auto;
+}
+main img:hover {
+    width: 100%;
+    transition: 0.9s;
+}
+h1 {
+	/*text-transform: uppercase;*/
+    font-size: 40px;
+    padding: 0px;
+    margin: 0px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: gray;
+}
+h2 {
+    font-size: 30px;
+    padding: 0px;
+    margin: 3%;
+    letter-spacing: 0px;
+    color: gray;
+}
+h3 {
+    font-size: 26px;
+    padding: 0px;
+    margin: 0px;
+    letter-spacing: 0px;
+    color: gray;
+}
+h3::after, h4::after, h5::after, h6::after {
+    content: ".";
+}  
+h4 {
+    font-size: 23px;
+    padding: 0px;
+    margin: 0px;
+    letter-spacing: 0px;
+    color: gray;
+}
+h5 {
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+    letter-spacing: 0px;
+    color: gray;
+}
+h6 {
+    font-size: 18px;
+    padding: 0px;
+    margin: 0px;
+    color: gray;
+}
+p {
+    background-color: none;
+    font-size: 16px;
+    margin: 1px;
+    padding: 15px 10px;
+    width: auto;
+    color: gray;
+    line-height: 15px;
+/*    text-align: left;*/
+}
+b, strong, cite {
+    font-weight: bolder;
+}
+hr {
+    color: #555;
+    border-style: line;
+    border-width: 1px;
+}
+code {
+    color: crimson;
+    background-color: #fafafa;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 110%;
+    border-radius: 5px;
+}
+span {
+    border: 1px solid black;
+    opacity:0.65;
+    color: black;
+}
+sub, sup {
+    font-size: 75%;
+}
+label > sup {
+    color: red;
+}
+
+/*Listas*/
+ol, dl {
+    list-style-type:none;
+    list-style-image: url('../img/iconovalidar.png');
+    margin: 0;
+    padding: 0;
+    width: 200px;
+}
+li a:hover {
+    opacity:1;
+    color: black;
+}
+li img {
+    padding: 2px;
+    opacity:0.65;
+}
+li img:hover {
+    opacity:1;
+}
+ul, dd {
+    list-style-type:none;
+    padding: 0;
+/*    width: 200px;
+    list-style-image: url('../img/iconos/lista-icono.png');
+    color: blue;
+    font-size: 12px;*/
+}
+
+/*Tablas*/
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+table {
+    font-family: arial, sans-serif;
+/*    border-collapse: collapse;*/
+    width: 100%;
+    }
+td, th {
+    padding: 1%;
+}
+tr:nth-child(even) {
+    background-color: lightgrey;
+}
+th {
+    color:black;
+}
+tr > td > a {
+    text-decoration: none;
+}
+tr > td > a:hover {
+    text-decoration: underline;
+}
+button {
+    background-color: darkgrey;
+    color: gray;
+    margin: 2%;
+    padding: 5px 10px; 
+    border-radius: 20px;
+    font-size: 85%;
+}
+button:hover {
+    background-color: #fafafa;
+    opacity: 0.8;
+}
+.buttongotop {
+    width: 48px;
+    height: 48px;
+    position: fixed;
+    right: 10px;
+    bottom: 5px;
+    max-width: 1440px;
+    text-align:center;
+    border-radius: 4px;
+    z-index: 2;
+    opacity: 0.7;
+}
+.buttongotop > a > i {
+    font-size:30px;
+    color: black;
+}
+div a {
+    text-decoration: underline;
+    color:grey;
+    font-size: 16px;
+}
+video {
+    width: 100%;
+    height: auto;
+}
+form {
+    border: 1px solid darkgrey;
+    font-size:10px;
+    text-align: left;
+}
+input[type=text], input[type=tel], input[type=email], input[type=password], input[type=number], textarea{
+    width: 100%;
+    height: 25px;
+}
+input[type=button] {
+    background-color: red;
+    color: white;
+    width: 100%;
+    margin: 1px;
+    padding: 5px 5px; 
+}
+input[type=submit] {
+    width: 40%;
+    height: 30px;
+    background-color: #4CAF50;
+    opacity:1;
+    color: white;
+}
+input[type=submit]:hover, input[type=button]:hover {
+    opacity:0.7;
+    cursor: pointer;
+}
+section {
+    border: 1px solid darkgrey;
+    padding: 1px;
+    margin: 2px auto;
+    width: 0 auto;
+    /*overflow: hidden;*/
+}
+section > div {
+    border: 1px solid darkgrey;
+    padding: 1px;
+    margin: 2px 5px;
+    /*overflow: hidden;*/
+    /*float: left;*/
+}
+
+article {
+    border: 1px solid darkgrey;
+    background-color: none;
+    text-align: left;
+    padding: 1px;
+    margin: 2px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+article div {
+    border: 1px solid darkgrey;
+    width: 100%;
+    bottom: 2%;
+    text-align: center;
+}
+article:hover {
+    box-shadow: 0px 14px 15px rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+}
+.flex-container {
+    border: 1px solid darkgrey;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: none;
+}
+.flex-container > div, 
+.flex-container > section,
+.flex-container > section > div,
+.flex-container > article,
+.flex-container > article > div {
+    border: 1px solid darkgrey;
+/*    background-color: none;*/
+/*    width: 600px;*/
+    padding: 3px;
+    margin: 2px;
+    text-align: center;
+}
+.flex-row {
+    flex-direction: row;
+}
+.flex-column {
+    flex-direction: column;
+}
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex-justifyleft {
+    justify-content: flex-start;
+}
+.flex-justifycenter {
+    justify-content: center;
+}
+.flex-justifyright {
+    justify-content: flex-end;
+}
+.flex-justifyspacebetween {
+    justify-content: space-between;
+}
+.flex-justifyspacearound {
+    justify-content: space-around;
+}
+.flex-aligncontentspacebetween {
+    align-content: space-between;
+}
+.flex-alignitemcenter {
+    align-items: center;
+}
+.colorblue {
+    background-color: rgb(93, 204, 238);
+}
+.colorgrey {
+    background-color: lightgrey;
+}
+.colorwhite {
+    background-color: #fafafa;
+}
+.colorblack {
+    background-color: darkgrey;
+}
+.colornone {
+    background-color: none;
+}
+.degradadoUp {
+    background-image: linear-gradient(0deg, black 10%, transparent 100%);
+}
+.degradadoRight {
+    background-image: linear-gradient(90deg, black 10%, transparent 100%);
+}
+.degradadoDown {
+    background-image: linear-gradient(180deg, black 10%, transparent 100%);
+}
+.degradadoLeft {
+    background-image: linear-gradient(270deg, black 10%, transparent 100%);
+}
+.alignleft {
+    text-align: left;
+}
+.alignright {
+    text-align: right;
+}
+.aligncenter {
+    text-align: center;
+}
+
+footer {
+    border: 1px solid darkgrey;
+    padding: 1px;
+    margin: 2px;
+    width: 100%;
+    max-width:1188px;
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Apple Legacy Chevron","Helvetica Neue","Helvetica","Arial",sans-serif;
+    /*overflow: hidden;*/
+    background-color: #fafafa;
+}
+footer > section > div {
+    border: 1px solid darkgrey;
+    padding: 1px;
+    margin: 2px;
+    color: gray;
+    /*overflow: hidden;*/
+    /*float: left;*/
+}
+footer a {
+    text-decoration: none;
+    font-size: 80%;
+    color: #555;
+}
+footer a:hover {
+    opacity:1;
+    text-decoration: underline;
+}
+footer p {
+    font-size: 80%;
+    color: gray;
+    text-align: left;
+    padding: 10px 0px;
+}
+footer li {
+    border: 1px solid darkgrey;
+    padding: 1px;
+    margin: 3px;
+    font-weight: 500;
+    list-style: none;
+    text-align: left;
+}
+.divlogo1{
+    background-image: url(../img/iconos/confianza-online-3-icons.png);
+    width: 44px;
+    height: 44px;
+}
+.divlogo1:hover {
+    background-image: url(../img/iconos/confianza-online-4-icons.png);
+}
+.divlogo2 {
+    background-image: url(../img/iconos/confianza-online-2-icons.png);
+    width: 44px;
+    height: 44px;
+}
+.divlogo2:hover {
+    background-image: url(../img/iconos/confianza-online-1-icons.png);
+}
+.imagen1 {
+    background-image: url(../img/Novedades-Galaxy-Watch-Active2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 262px auto;
+    height: 188px; 
+}
+.imagen1:hover {
+    background-image: url(../img/Novedades-Galaxy-Watch-Active2-hover.png);
+    transition: 0.5s;
+}
+.imagen2 {
+    background-image: url(../img/Novedades-Serif.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 262px auto;
+    height: 188px; 
+}
+.imagen2:hover {
+    background-image: url(../img/Novedades-Serif-hover.png);
+    transition: 0.5s;
+}
+.imagen3 {
+    background-image: url(../img/Novedades-Galaxy-A30s.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 262px auto;
+    height: 188px; 
+}
+.imagen3:hover {
+    background-image: url(../img/Novedades-Galaxy-A30s-hover.png);
+    transition: 0.5s;
+}
+.imagen4 {
+    background-image: url(../img/Novedades-Horno.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 262px auto;
+    height: 188px; 
+}
+.imagen4:hover {
+    background-image: url(../img/Novedades-Horno-hover.png);
+    transition: 0.5s;
+}
+.CondicionesLegales {
+    border: 1px solid darkgrey;
+    padding: 2px 12px;
+    margin: 0;
+    text-align: left;
+    background-color: #fafafa;
+}
+.CondicionesLegales a {
+    padding: 20px 3px;
+    color: 555;
+}
+
+@media screen and (min-width: 890px) {
+    .click3 {
+        display: none;
+    }
+}
+@media screen and (max-width: 960px) {
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    h3 {
+        font-size: 26px;
+    }
+    h4 {
+        font-size: 23px;
+    }
+    h5 {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 890px) {
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 25px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    h5 {
+        font-size: 17px;
+    }
+    div a {
+        font-size: 16px;
+        padding: 0px 0px;
+    }
+    section > div {
+        width: 100%;
+    }
+    .flex-container {
+        flex-direction: column;
+    }
+    .flex-container > div {
+        width: 100%;
+        position: relative;
+    }
+    .click2, .click6 {
+        display: none;
+    }
+    img {
+        width: 100%;
+    }
+    footer a {
+        font-size: 13px;
+        padding: 0px;
+    }
+    footer p, footer li {
+        text-align: center;
+    }
+}
+@media screen and (max-width: 700px) {
+    h1 {
+        font-size: 28px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    h3 {
+        font-size: 19px;
+        padding: 0px 20px;
+    }
+    h3 br {
+        display: none;
+    }
+    h4 {
+        font-size: 17px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    div a {
+        font-size: 14px;
+        padding: 0px 0px;
+    }
+    section > div {
+        width: 100%;
+    }
+    .flex-container {
+        flex-direction: column;
+    }
+    .flex-container > div {
+        width: 100%;
+        position: relative;
+    }
+    .buttongotop {
+        width: 38px;
+        height: 38px;
+        position: fixed;
+        right: 7px;
+        bottom: 3px;
+        max-width: 1440px;
+        text-align:center;
+        border-radius: 4px;
+        z-index: 2;
+        opacity: 0.7;
+    }
+    .buttongotop > a > i {
+        font-size:21px;
+        color: black;
+    }
+    img {
+        width: 100%;
+    }
+    footer > div {
+        float: none;
+        width:100%
+    }
+    footer a {
+        font-size: 14px;
+        padding: 0px;
+    }
+    footer p, footer li {
+        text-align: center;
+    }
+}
+@media screen and (max-width: 550px) {
+    h1 {
+        font-size: 25px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 19px;
+        padding: 0px 20px;
+    }
+    h3 br {
+        display: none;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    h5 {
+        font-size: 15px;
+    }
+    div a {
+        font-size: 13px;
+        padding: 0px 0px;
+    }
+    section > div {
+        width: 100%;
+    }
+    .flex-container {
+        flex-direction: column;
+    }
+    .flex-container > div {
+        width: 100%;
+        position: relative;
+    }
+    .buttongotop {
+        width: 28px;
+        height: 28px;
+        position: fixed;
+        right: 5px;
+        bottom: 2px;
+        max-width: 1440px;
+        text-align:center;
+        border-radius: 4px;
+        z-index: 2;
+        opacity: 0.7;
+    }
+    .buttongotop > a > i {
+        font-size:13px;
+        color: black;
+    }
+    img {
+        width: 100%;
+    }
+    footer > div {
+        float: none;
+        width:100%
+    }
+    footer a {
+        font-size: 13px;
+        padding: 0px;
+    }
+    footer p, footer li {
+        text-align: center;
+    }
+}
